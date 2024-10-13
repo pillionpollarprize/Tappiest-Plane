@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     public float spawnTime = 2;
 
     private float lastSpawnTime;
-    // Start is called before the first frame update
+
     void Start()
     {
         //spawn - copy the object
@@ -20,7 +20,8 @@ public class Spawner : MonoBehaviour
     {
         if(lastSpawnTime + spawnTime < Time.time)
         {
-
+            Instantiate(pipePrefab);
+            lastSpawnTime = Time.time;
         }
     }
 }
